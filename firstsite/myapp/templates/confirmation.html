@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>確認</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>確認</h1>
+    <p>以下の内容でよろしいですか？</p>
+    <p>お名前: {{ name }}</p>
+    <p>性別: {{ gender }}</p>
+    <p>興味のある言語:<br>
+        {% for lang in lang_list %}
+        {{ lang }} <br>
+        {% endfor %}
+    </p>
+    <p>メッセージ:<br> {{ message | linebreaksbr }}</p>
+    <a href="{% url 'myapp:question' %}">戻る</a>
+</body>
+
+</html>

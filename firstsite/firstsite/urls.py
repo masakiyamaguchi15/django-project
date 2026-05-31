@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("app01/", include("hello.urls")),
     path("app02/", include("myapp.urls")),
+    path("app03/", include("simplechat.urls")),
 ]

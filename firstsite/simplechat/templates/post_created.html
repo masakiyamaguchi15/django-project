@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>投稿完了</title>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>投稿完了</h1>
+    <div>
+        <p>名前: {{ author }}</p>
+        <p>内容: {{ content | linebreaksbr }}</p>
+        <a href="{% url 'simplechat:post_list' %}">投稿一覧を見る</a>
+    </div>
+</body>
+
+</html>

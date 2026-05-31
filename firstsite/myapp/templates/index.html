@@ -1,15 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link href="/static/style.css" rel="stylesheet" />
+    <link href="{% static 'style.css' %}" rel="stylesheet" />
 </head>
 
 <body>
     <h1>Welcome</h1>
     <p>{{ contents }}</p>
+    <p><a href="{% url 'myapp:question' %}">アンケートに回答する</a></p>
 </body>
 
 </html>

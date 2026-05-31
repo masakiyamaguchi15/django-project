@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>アンケート</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>アンケート</h1>
+    <p>以下の質問にお答えください。<br>ご回答いただいた内容はプライバシーポリシーにしたがって処理いたします。</p>
+    <form method="post" action="{% url 'myapp:confirm' %}">{% csrf_token %}
+        お名前：
+        <input type="text" name="name"><br>
+        性別：
+        <input type="radio" name="gender" value="1">男性 /
+        <input type="radio" name="gender" value="2">女性 /
+        <input type="radio" name="gender" value="3">その他 /
+        <input type="radio" name="gender" value="4">回答しない<br>
+        興味のある言語（いくつでも）：<br>
+        <input type="checkbox" name="lang" value="C/C++">C/C++<br>
+        <input type="checkbox" name="lang" value="Java">Java<br>
+        <input type="checkbox" name="lang" value="PHP">PHP<br>
+        <input type="checkbox" name="lang" value="Python">Python<br>
+        <input type="checkbox" name="lang" value="C#">C#<br>
+        <input type="checkbox" name="lang" value="その他">その他<br>
+        <br>
+        メッセージ：<br>
+        <textarea name="message"></textarea><br>
+        <input type="submit">
+    </form>
+    <a href="{% url 'myapp:index' %}">戻る</a>
+</body>
+
+</html>

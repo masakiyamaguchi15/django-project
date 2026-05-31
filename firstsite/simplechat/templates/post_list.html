@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>投稿一覧</title>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>投稿一覧</h1>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <strong>{{ post.author }}</strong> - {{ post.timestamp }}
+            <p>{{ post.content | linebreaksbr }}</p>
+        </li>
+        {% empty %}
+        <p>まだ投稿がありません。</p>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'simplechat:index' %}">新しい投稿</a></p>
+</body>
+
+</html>
