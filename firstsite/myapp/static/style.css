@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body {
+    font-family: system-ui;
+    padding: 10px;
+}
+
+h1 {
+    font-size: medium;
+    text-align: center;
+    text-decoration: underline silver;
+}
+
+p {
+    font-size: medium;
+    text-align: center;
+}

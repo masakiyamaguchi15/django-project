@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form Sample</title>
+</head>
+<body>
+    <form action="target-URL">
+        <div>
+            テキスト <input type="text" name="txt" value="" required>
+        </div>
+        <div>
+            ラジオボタン
+            <input type="radio" name="rdo" value="1">Yes
+            <input type="radio" name="rdo" value="2">No
+        </div>
+        <div>
+            チェックボックス
+            <input type="checkbox" name="chkbox" value="A">Apple
+            <input type="checkbox" name="chkbox" value="B">Banana
+            <input type="checkbox" name="chkbox" value="C">Cookie
+        </div>
+        <div>
+            テキストエリア<br />
+            <textarea name="txtara" rows="3"></textarea>
+        </div>
+        <div>
+            メニューリスト
+            <select name="dropdown">
+                <option value="">選択してください</option>
+                <option value="1">1 Spring</option>
+                <option value="2">2 Summer</option>
+                <option value="3">3 Autumn</option>
+                <option value="4">4 Winter</option>
+            </select>
+        </div>
+        <div style="padding-top:1em">
+            <input type="submit" name="btn" value="実行する">
+        </div>
+    </form>
+</body>
+</html>
