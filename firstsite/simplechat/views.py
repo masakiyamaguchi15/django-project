@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Post
 
 def index(request):
@@ -8,12 +8,13 @@ def post_create(request):
     if request.method == 'POST':
         author = request.POST.get('author')
         content = request.POST.get('content')
+        request.session['author'] = author
         post = Post(
             author=author,
             content=content
         )
         post.save()
-        return render(request, 'post_created.html', {'author': author, 'content': content})
+        return redirect('simplechat:post_list')
     return render(request, 'post_form.html')
 
 def post_list(request):

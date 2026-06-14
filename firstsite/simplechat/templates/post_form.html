@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>投稿フォーム</title>
     {% load static %}
+    <title>投稿フォーム</title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
 </head>
 
@@ -15,7 +15,7 @@
             {% csrf_token %}
             <p>
                 <label for="author">名前:</label>
-                <input type="text" id="author" name="author" required>
+                <input type="text" id="author" name="author" value="{{ request.session.author }}" required>
             </p>
             <p>
                 <label for="content">内容:</label>
